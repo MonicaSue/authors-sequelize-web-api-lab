@@ -3,7 +3,8 @@ const authorsCtrl = require('../controllers/authors.js')
 
 router.get('/', authorsCtrl.index)
 router.get('/:id', authorsCtrl.show)
-router.put('/:id', authorsCtrl.update)
 router.post('/', authorsCtrl.create)
+router.put('/:id', authorsCtrl.update)
+router.delete('/:id', authorsCtrl.delete)
 
 module.exports = router
