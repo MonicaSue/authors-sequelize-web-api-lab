@@ -4,6 +4,7 @@ const authorsCtrl = require('../controllers/authors.js')
 router.get('/', authorsCtrl.index)
 router.get('/:id', authorsCtrl.show)
 router.post('/', authorsCtrl.create)
+router.post('/:id/books', authorsCtrl.addBook)
 router.put('/:id', authorsCtrl.update)
 router.delete('/:id', authorsCtrl.delete)
 
