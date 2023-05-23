@@ -1,4 +1,4 @@
-const { Author } = require("../models")
+const { Author, Book } = require("../models")
 
 const create = async (req, res) => {
   try {
