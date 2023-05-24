@@ -33,13 +33,13 @@ Response:
 }
 ```
 
-### Get All Authors
+### Get All Authors and Associated Books
 
 **Method**: GET
 
 **Endpoint**: ```/api/authors```
 
-**Description**: This endpoint retrieves all the authors stored in the database.
+**Description**: This endpoint retrieves all the authors and their associated books stored in the database.
 
 Response:
 ```
@@ -50,7 +50,17 @@ Response:
     "nationality": "string",
     "genre": "string",
     "createdAt": "timestamp",
-    "updatedAt": "timestamp"
+    "updatedAt": "timestamp",
+    "books": [
+      {
+        "id": integer,
+        "title": "string",
+        "genre": "string",
+        "authorId: integer,
+        "createdAt": "timestamp",
+        "updatedAt": "timestamp"
+      }
+    ]
   },
 ]
 ```
@@ -99,6 +109,34 @@ Response:
   "name": "string",
   "nationality": "string",
   "genre": "string",
+  "createdAt": "timestamp",
+  "updatedAt": "timestamp"
+}
+```
+
+### Create a Book
+
+**Method**: ```POST```
+
+**Endpoint**: ```/api/authors/:id/books```
+
+**Description**: This endpoint creates a new book that is associated with an author with the provided information in the request body.
+
+Request Body:
+```
+{
+  "title": "string",
+  "genre": "string"
+}
+```
+
+Response:
+```
+{
+  "id": integer,
+  "title": "string",
+  "genre": "string",
+  "authorId": integer,
   "createdAt": "timestamp",
   "updatedAt": "timestamp"
 }
